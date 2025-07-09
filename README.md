@@ -72,6 +72,12 @@ This website is **not for issuing** passports or birth certificates. It is only 
 
 ## 🚀 Quick Start
 
+## 🌐 Live Demo
+
+- **Frontend**: https://acquahconsult.netlify.app
+- **Backend API**: https://acquah-consult-backend.vercel.app
+- **Documentation**: See DEPLOYMENT.md for full setup guide
+
 ### Backend Setup
 
 1. **Navigate to backend directory**
