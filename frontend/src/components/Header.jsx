@@ -29,6 +29,7 @@ const Header = () => {
             {authenticated ? (
               <>
                 <Link to="/applications" className="hover:text-yellow-400 transition-colors">Apply</Link>
+                <Link to="/payment-history" className="hover:text-yellow-400 transition-colors">Payments</Link>
                 <div className="flex items-center space-x-4">
                   <span className="text-sm">Hello, {user?.firstName}</span>
                   <button
@@ -63,6 +64,7 @@ const Header = () => {
             {authenticated ? (
               <>
                 <Link to="/applications" className="block py-2 hover:text-yellow-400 transition-colors">Apply</Link>
+                <Link to="/payment-history" className="block py-2 hover:text-yellow-400 transition-colors">Payments</Link>
                 <div className="py-2 text-sm">Hello, {user?.firstName}</div>
                 <button
                   onClick={handleLogout}

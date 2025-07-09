@@ -9,6 +9,7 @@ require('dotenv').config();
 const authRoutes = require('./routes/auth');
 const applicationRoutes = require('./routes/applications');
 const trackingRoutes = require('./routes/tracking');
+const paymentRoutes = require('./routes/payments');
 
 const app = express();
 
@@ -47,6 +48,7 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/acquah-co
 app.use('/api/auth', authRoutes);
 app.use('/api/applications', applicationRoutes);
 app.use('/api/tracking', trackingRoutes);
+app.use('/api/payments', paymentRoutes);
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {

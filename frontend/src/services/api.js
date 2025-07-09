@@ -64,4 +64,11 @@ export const trackingAPI = {
   trackByEmail: (email) => api.post('/tracking/by-email', { email }),
 };
 
+// Payments API
+export const paymentsAPI = {
+  initializePayment: (data) => api.post('/payments/initialize', data),
+  verifyPayment: (reference) => api.post('/payments/verify', { reference }),
+  getPaymentHistory: () => api.get('/payments/history'),
+};
+
 export default api;

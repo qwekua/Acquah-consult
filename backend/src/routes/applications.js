@@ -68,7 +68,9 @@ router.post('/birth-certificate', auth, upload.single('ghanaCard'), [
         applicationId: application.applicationId,
         type: application.type,
         status: application.status,
-        submittedAt: application.submittedAt
+        submittedAt: application.submittedAt,
+        requiresPayment: true,
+        amount: 400
       }
     });
   } catch (error) {
@@ -133,7 +135,9 @@ router.post('/passport', auth, upload.single('birthCertificate'), [
         applicationId: application.applicationId,
         type: application.type,
         status: application.status,
-        submittedAt: application.submittedAt
+        submittedAt: application.submittedAt,
+        requiresPayment: true,
+        amount: 1400
       }
     });
   } catch (error) {
@@ -185,7 +189,9 @@ router.post('/both', auth, upload.fields([
         applicationId: application.applicationId,
         type: application.type,
         status: application.status,
-        submittedAt: application.submittedAt
+        submittedAt: application.submittedAt,
+        requiresPayment: true,
+        amount: 1800
       }
     });
   } catch (error) {

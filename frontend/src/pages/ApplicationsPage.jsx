@@ -1,8 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FileText, CreditCard, Clock, AlertCircle, Search } from 'lucide-react';
+import PaymentModal from '../components/PaymentModal';
 
 const ApplicationsPage = () => {
+  const [paymentModal, setPaymentModal] = React.useState({ isOpen: false, application: null });
+
+  const handlePaymentSuccess = (paymentData) => {
+    // Handle successful payment
+    console.log('Payment successful:', paymentData);
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 py-12">
       <div className="container mx-auto px-4">
@@ -16,7 +24,7 @@ const ApplicationsPage = () => {
             <div className="flex items-center">
               <AlertCircle className="h-5 w-5 text-yellow-600 mr-2" />
               <p className="text-yellow-800">
-                <strong>Important:</strong> A birth certificate is required before applying for a passport.
+                <strong>Important:</strong> A birth certificate is required before applying for a passport. Payment is required to process your application.
               </p>
             </div>
           </div>
@@ -105,6 +113,13 @@ const ApplicationsPage = () => {
             </div>
           </div>
         </div>
+
+        <PaymentModal
+          isOpen={paymentModal.isOpen}
+          onClose={() => setPaymentModal({ isOpen: false, application: null })}
+          application={paymentModal.application}
+          onPaymentSuccess={handlePaymentSuccess}
+        />
       </div>
     </div>
   );

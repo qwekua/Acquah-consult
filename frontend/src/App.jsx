@@ -10,6 +10,8 @@ import ApplicationsPage from './pages/ApplicationsPage';
 import BirthCertificateForm from './pages/BirthCertificateForm';
 import PassportForm from './pages/PassportForm';
 import TrackingPage from './pages/TrackingPage';
+import PaymentPage from './pages/PaymentPage';
+import PaymentHistoryPage from './pages/PaymentHistoryPage';
 
 function App() {
   return (
@@ -22,6 +24,7 @@ function App() {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignUpPage />} />
             <Route path="/track" element={<TrackingPage />} />
+            <Route path="/payment/callback" element={<PaymentPage />} />
             <Route 
               path="/applications" 
               element={
@@ -43,6 +46,14 @@ function App() {
               element={
                 <ProtectedRoute>
                   <PassportForm />
+                </ProtectedRoute>
+              } 
+            />
+            <Route 
+              path="/payment-history" 
+              element={
+                <ProtectedRoute>
+                  <PaymentHistoryPage />
                 </ProtectedRoute>
               } 
             />
